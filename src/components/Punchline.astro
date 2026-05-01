@@ -1,0 +1,10 @@
+---
+interface Props { text: string }
+const { text } = Astro.props;
+---
+<aside class="mx-auto my-12 max-w-screen-xl px-4 sm:px-6">
+  <hr class="rule mb-8 border-blood opacity-70" />
+  <p class="font-display text-[clamp(1.5rem,3.5vw,2.5rem)] font-bold leading-tight text-balance text-ink">
+    <span class="me-3 text-blood">▮</span>{text}
+  </p>
+</aside>

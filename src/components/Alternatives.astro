@@ -1,0 +1,35 @@
+---
+import type { SiteContent } from '../content.config';
+interface Props { content: SiteContent }
+const { content } = Astro.props;
+const a = content.alternatives;
+---
+<section id="alternativas" class="border-b border-ink/30 bg-paper/40">
+  <div class="mx-auto max-w-screen-xl px-4 py-20 sm:px-6">
+    <header class="mb-12 max-w-3xl">
+      <h2 class="font-display text-[clamp(2rem,5vw,3.75rem)] font-bold tracking-tight">{a.title}</h2>
+      <p class="mt-3 font-display text-xl italic text-rust sm:text-2xl">{a.subtitle}</p>
+    </header>
+    <div class="grid gap-8 md:grid-cols-2">
+      {a.categories.map((cat) => (
+        <section>
+          <h3 class="meta border-b border-ink/20 pb-2 text-blood">{cat.category}</h3>
+          <ul role="list" class="mt-4 space-y-4">
+            {cat.options.map((opt) => (
+              <li>
+                <p class="font-display text-xl font-semibold">
+                  {opt.url ? (
+                    <a href={opt.url} target="_blank" rel="noopener noreferrer" class="underline decoration-blood/40 decoration-2 underline-offset-4 hover:decoration-blood">↗ {opt.name}</a>
+                  ) : (
+                    opt.name
+                  )}
+                </p>
+                <p class="mt-1 text-sm leading-relaxed text-ink/85">{opt.description}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,162 @@
+---
+import type { SiteContent } from '../content.config';
+import type { LocaleCode } from '../i18n/locales';
+import { getLocale } from '../i18n/locales';
+
+interface Props { content: SiteContent; locale: LocaleCode }
+const { content, locale } = Astro.props;
+const tool = content.interactive_tool;
+const meta = getLocale(locale);
+const calc = content.ui.calculator;
+const itemsJson = JSON.stringify(tool.comparisons.items);
+const verdictsJson = JSON.stringify(tool.verdict_thresholds);
+const shareTpl = tool.share_format.template;
+---
+<section id="calculadora" class="border-y border-ink/30 bg-ink text-bone">
+  <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-20">
+    <header class="mb-10 max-w-3xl">
+      <p class="meta mb-2 text-blood">{tool.id}</p>
+      <h2 class="font-display text-[clamp(2rem,5vw,3.5rem)] font-bold leading-[1] tracking-tight">
+        {tool.title}
+      </h2>
+      <p class="mt-3 font-display text-xl italic text-bone/70 sm:text-2xl">{tool.subtitle}</p>
+      <p class="mt-6 text-base leading-relaxed text-bone/85 sm:text-lg">{tool.intro}</p>
+      <p class="mt-2">
+        <a href={tool.average_source.url} target="_blank" rel="noopener noreferrer" class="font-mono text-[0.7rem] text-blood underline underline-offset-4">↗ {tool.average_source.outlet}</a>
+      </p>
+    </header>
+
+    <div class="grid gap-10 lg:grid-cols-12">
+      <div class="lg:col-span-5">
+        <label for="hours" class="meta block text-blood">{tool.input.label}</label>
+        <p class="mt-3 font-display font-black leading-none">
+          <span id="hoursValue" class="text-[clamp(4rem,12vw,8rem)] text-bone" data-bcp47={meta.bcp47}>
+            {tool.input.default.toString().replace('.', ',')}
+          </span>
+          <span class="ms-2 align-baseline font-mono text-base uppercase tracking-wider text-bone/60">{tool.input.unit}</span>
+        </p>
+        <input
+          id="hours"
+          type="range"
+          min={tool.input.min}
+          max={tool.input.max}
+          step={tool.input.step}
+          value={tool.input.default}
+          aria-label={tool.input.label}
+          class="mt-6 w-full accent-blood"
+        />
+        <p class="meta mt-2 text-bone/60">{calc.vs_global_average}</p>
+
+        <div class="mt-10 grid grid-cols-2 gap-4">
+          <div>
+            <p class="font-display text-[clamp(2rem,5vw,3.5rem)] font-black leading-none text-blood"><span id="resHours">912</span></p>
+            <p class="meta mt-1 text-bone/60">{calc.result_hours_year}</p>
+          </div>
+          <div>
+            <p class="font-display text-[clamp(2rem,5vw,3.5rem)] font-black leading-none text-blood"><span id="resDays">57</span></p>
+            <p class="meta mt-1 text-bone/60">{calc.result_days_year}</p>
+          </div>
+          <div>
+            <p class="font-display text-[clamp(1.5rem,3.5vw,2.5rem)] font-black leading-none"><span id="resDecade">570</span></p>
+            <p class="meta mt-1 text-bone/60">{calc.result_decade_days}</p>
+          </div>
+          <div>
+            <p class="font-display text-[clamp(1.5rem,3.5vw,2.5rem)] font-black leading-none"><span id="resLifetime">9,3</span></p>
+            <p class="meta mt-1 text-bone/60">{calc.result_lifetime}</p>
+          </div>
+        </div>
+
+        <p id="verdict" class="mt-8 border-s-4 border-blood ps-5 font-display text-xl italic leading-snug text-bone"></p>
+
+        <button id="shareBtn" type="button" class="mt-6 inline-flex items-center gap-2 border border-blood bg-blood px-5 py-2.5 font-mono text-xs uppercase tracking-wider text-bone hover:bg-bone hover:text-blood">
+          ▶ {calc.share_button}
+        </button>
+        <span id="shareCopied" class="ms-3 hidden font-mono text-xs text-blood">{calc.copied}</span>
+      </div>
+
+      <div class="lg:col-span-7">
+        <h3 class="font-display text-2xl font-bold tracking-tight sm:text-3xl">
+          {tool.comparisons.title}
+        </h3>
+        <p class="mt-2 max-w-xl text-bone/70">{tool.comparisons.intro}</p>
+        <ul role="list" id="compGrid" class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline define:vars={{ itemsJson, verdictsJson, shareTpl, bcp47: meta.bcp47 }}>
+(() => {
+  const COMPARISON_ITEMS = JSON.parse(itemsJson);
+  const VERDICTS = JSON.parse(verdictsJson);
+  const slider = document.getElementById('hours');
+  const display = document.getElementById('hoursValue');
+  const resHours = document.getElementById('resHours');
+  const resDays = document.getElementById('resDays');
+  const resDecade = document.getElementById('resDecade');
+  const resLifetime = document.getElementById('resLifetime');
+  const verdict = document.getElementById('verdict');
+  const grid = document.getElementById('compGrid');
+  const shareBtn = document.getElementById('shareBtn');
+  const shareCopied = document.getElementById('shareCopied');
+  if (!slider) return;
+
+  const fmt = (n, d=0) => new Intl.NumberFormat(bcp47, { maximumFractionDigits: d, minimumFractionDigits: d ? d : 0 }).format(n);
+
+  function update() {
+    const h = parseFloat(slider.value);
+    if (display) display.textContent = fmt(h, h % 1 ? 1 : 0);
+    const hoursYear = h * 365;
+    const daysYear = hoursYear / 16;
+    const decade = daysYear * 10;
+    const lifetime = (h * 365 * 60) / (16 * 365);
+    if (resHours)    resHours.textContent    = fmt(hoursYear);
+    if (resDays)     resDays.textContent     = fmt(daysYear, 0);
+    if (resDecade)   resDecade.textContent   = fmt(decade, 0);
+    if (resLifetime) resLifetime.textContent = fmt(lifetime, 1);
+
+    const v = VERDICTS.find(t => h <= t.max_hours) || VERDICTS[VERDICTS.length-1];
+    if (verdict) verdict.textContent = v ? v.message : '';
+
+    if (grid) {
+      grid.innerHTML = '';
+      COMPARISON_ITEMS.forEach(item => {
+        const count = Math.floor(hoursYear / item.average_duration_hours);
+        const li = document.createElement('li');
+        li.className = 'border border-bone/20 bg-bone/5 p-4';
+        const big = document.createElement('p');
+        big.className = 'font-display text-3xl font-black leading-none text-blood';
+        big.textContent = fmt(count) + '×';
+        const lbl = document.createElement('p');
+        lbl.className = 'meta mt-1 text-bone/70';
+        lbl.textContent = item.activity;
+        const desc = document.createElement('p');
+        desc.className = 'mt-2 text-xs leading-snug text-bone/55';
+        desc.textContent = item.description;
+        li.appendChild(big); li.appendChild(lbl); li.appendChild(desc);
+        grid.appendChild(li);
+      });
+    }
+  }
+
+  if (shareBtn) shareBtn.addEventListener('click', async () => {
+    const h = parseFloat(slider.value);
+    const days = Math.floor((h * 365) / 16);
+    const text = shareTpl.replace('{días}', fmt(days)).replace('{days}', fmt(days));
+    try {
+      if (navigator.share) {
+        await navigator.share({ text, url: location.href });
+      } else if (navigator.clipboard) {
+        await navigator.clipboard.writeText(text + ' ' + location.href);
+        if (shareCopied) {
+          shareCopied.classList.remove('hidden');
+          setTimeout(() => shareCopied.classList.add('hidden'), 2000);
+        }
+      }
+    } catch {}
+  });
+
+  slider.addEventListener('input', update);
+  update();
+})();
+</script>

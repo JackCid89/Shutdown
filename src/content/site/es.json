@@ -1,0 +1,522 @@
+{
+  "campaign": {
+    "name": "CIERRA",
+    "tagline": "Cierra las que puedas.",
+    "subtitle": "Lo que las redes te están quitando — y lo que están haciendo con ello.",
+    "language": "es",
+    "tone": "directo, sin eufemismos, periodístico, doloroso por honesto",
+    "thesis": "El mismo modelo de negocio que convierte tu vida en datos extraíbles para venderte cosas, alimenta también las máquinas de vigilancia, persecución y guerra. No son problemas separados: es la misma cadena.",
+    "call_to_action_primary": "Cierra las que puedas. Hoy.",
+    "call_to_action_secondary": "Empieza por la que más uses."
+  },
+  "hero": {
+    "kicker": "No es un manifiesto. Es una salida.",
+    "headline": "Cierra las que puedas.",
+    "subheadline": "Y recupera lo que te están quitando.",
+    "lead": "No te lo decimos como consejo. Te lo decimos porque lo que ocurre dentro de esas aplicaciones ya ha matado gente, ha encarcelado a otras por bromas, ha entregado tu cara y tu rutina a desconocidos que nunca consentiste, y está alimentando, en este momento, máquinas que deciden a quién bombardear.",
+    "scroll_hint": "Sigue leyendo. Duele porque es cierto."
+  },
+  "chapters": [
+    {
+      "id": "01",
+      "number": "I",
+      "slug": "salud",
+      "title": "Tu cerebro en redes",
+      "subtitle": "Lo diseñaron para engancharte. Lo admiten ellos.",
+      "thesis": "No es debilidad personal. Es un producto diseñado para explotar el sistema dopaminérgico humano. Funcionan con los mismos circuitos cerebrales que la cocaína y las máquinas tragaperras.",
+      "key_facts": [
+        {
+          "fact": "Las plataformas de redes sociales aprovechan el mismo circuito neural usado por las máquinas tragaperras y la cocaína para mantenernos consumiendo sus productos.",
+          "source": "Trevor Haynes, técnico de investigación en Harvard Medical School",
+          "url": "https://sites.dartmouth.edu/dujs/2022/08/20/social-media-dopamine-and-stress-converging-pathways/",
+          "outlet": "Dartmouth Undergraduate Journal of Science",
+          "year": "2022"
+        },
+        {
+          "fact": "Al desconectarse, el cerebro entra en un estado de déficit de dopamina mientras intenta adaptarse a los niveles anormalmente altos que las redes acaban de liberar. Por eso las redes a menudo se sienten bien mientras las usamos pero horribles después.",
+          "source": "Dra. Anna Lembke, psiquiatra de Stanford, autora de 'Dopamine Nation'",
+          "url": "https://med.stanford.edu/news/insights/2021/10/addictive-potential-of-social-media-explained.html",
+          "outlet": "Stanford Medicine",
+          "year": "2021"
+        },
+        {
+          "fact": "Los algoritmos de IA de las redes sociales están diseñados únicamente para captar nuestra atención con fines de lucro sin priorizar consideraciones éticas, maximizando el tiempo de pantalla y profundizando la activación de los centros de recompensa cerebrales.",
+          "source": "Estudio publicado en PMC / National Center for Biotechnology Information",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11804976/",
+          "outlet": "National Library of Medicine",
+          "year": "2025"
+        },
+        {
+          "fact": "Entre el 93% y el 97% de los adolescentes de 13 a 17 años usan al menos una red social. Casi un tercio de todos los usuarios son adolescentes y jóvenes adultos, los más vulnerables a sus efectos negativos.",
+          "source": "Revisión de neurofisiología y adicción en adolescentes, PMC",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11804976/",
+          "outlet": "National Library of Medicine",
+          "year": "2025"
+        }
+      ],
+      "internal_documents": {
+        "title": "Lo que sabían y ocultaron",
+        "context": "Frances Haugen, ex-data scientist de Facebook, filtró decenas de miles de documentos internos en 2021. Los documentos demostraron que la empresa estudió internamente el daño que causaba en adolescentes y decidió no actuar.",
+        "findings": [
+          "13,5% de las adolescentes en Reino Unido tenían pensamientos suicidas más frecuentes asociados al uso de Instagram.",
+          "17% de las adolescentes experimentaron empeoramiento de un trastorno alimentario.",
+          "32% de las adolescentes que ya se sentían mal con sus cuerpos se sintieron peor tras usar Instagram.",
+          "Cita literal de un documento interno de Facebook: 'Empeoramos los problemas de imagen corporal de una de cada tres adolescentes.'"
+        ],
+        "sources": [
+          { "outlet": "Wall Street Journal — The Facebook Files", "url": "https://www.wsj.com/articles/facebook-knows-instagram-is-toxic-for-teen-girls-company-documents-show-11631620739" },
+          { "outlet": "Social Media Victims Law Center", "url": "https://socialmediavictims.org/facebook-whistleblower-frances-haugen/" },
+          { "outlet": "TIME — perfil de Frances Haugen", "url": "https://time.com/6121931/frances-haugen-facebook-whistleblower-profile/" }
+        ]
+      },
+      "punchline": "No eres tú. Es el diseño."
+    },
+    {
+      "id": "02",
+      "number": "II",
+      "slug": "muertes",
+      "title": "Cuando un algoritmo termina en un cuerpo",
+      "subtitle": "Esto ya no es teoría. Hay nombres, hay forenses, hay genocidios.",
+      "thesis": "Los algoritmos de recomendación no son neutrales. En jurisdicciones que ya lo han juzgado, han contribuido a suicidios individuales y a genocidios masivos.",
+      "stories": [
+        {
+          "name": "Molly Russell",
+          "age": 14,
+          "country": "Reino Unido",
+          "year": 2017,
+          "tag": "Primera sentencia judicial del mundo que reconoce que las redes sociales contribuyeron a una muerte",
+          "story": "Molly entró en una etapa depresiva siendo adolescente y, mientras buscaba en línea, empezó a interactuar con publicaciones sobre depresión. En cuanto los algoritmos de Meta lo detectaron, la empresa empezó a alimentarla con contenido cada vez más extremo sobre depresión, autolesiones y suicidio — material que ella no había solicitado. En los últimos seis meses de su vida, interactuaba con una media de 130 publicaciones diarias sobre estos temas. Se quitó la vida en noviembre de 2017.",
+          "ruling": "El forense de Londres, Andrew Walker, dictaminó: 'Molly Rose Russell murió por un acto de autolesión mientras sufría depresión y los efectos negativos del contenido en línea.'",
+          "current_status": "Una investigación de 2025 de la Molly Rose Foundation —usando cuentas de prueba que se hicieron pasar por chicas de 15 años— encontró que el 97% de todo el contenido recomendado en los reels de Instagram a esas cuentas glorificaba el suicidio, la depresión o la autolesión. La describieron como 'un bombardeo casi constante de publicaciones dañinas'. Ocho años después de la muerte de Molly. No ha cambiado nada.",
+          "sources": [
+            { "outlet": "The Conversation — análisis del veredicto del forense", "url": "https://theconversation.com/coroner-finds-social-media-contributed-to-14-year-old-molly-russells-death-how-should-parents-and-platforms-react-191757" },
+            { "outlet": "Deseret News — análisis tras la sentencia", "url": "https://www.deseret.com/2022/10/18/23410819/molly-russell-suicide-depression-social-media-big-tobacco-meta-facebook-frances-haugen/" },
+            { "outlet": "TIME — investigación 2025 de Molly Rose Foundation", "url": "https://time.com/7310444/instagram-lawsuit-self-harm/" }
+          ]
+        },
+        {
+          "name": "Genocidio rohinyá",
+          "country": "Myanmar",
+          "year": 2017,
+          "tag": "Más de 10.000 muertos. 700.000 desplazados. Facebook reconocido como cómplice por la ONU.",
+          "story": "Entre 2016 y 2017, el ejército de Myanmar llevó a cabo una campaña sistemática de asesinatos masivos, violaciones e incendios de casas contra la minoría rohinyá. En un país donde 'Facebook es internet', los algoritmos de Meta amplificaron de forma proactiva el discurso de odio anti-rohinyá durante años. Una investigación de 2020 sobre un vídeo del monje extremista U Wirathu reveló que más del 70% de las visualizaciones procedían de 'encadenamiento': el algoritmo lo recomendaba automáticamente a personas que habían visto otros vídeos.",
+          "un_quote": "El investigador de la ONU sobre el genocidio rohinyá declaró: 'Facebook se convirtió en una bestia.' La Misión de Investigación Independiente Internacional de la ONU concluyó que el papel de las redes sociales fue 'significativo' en las atrocidades.",
+          "victim_quote": "Maung Sawyeddollah, activista rohinyá superviviente: 'Creemos que el genocidio contra los rohinyás solo fue posible gracias a Facebook. Se comunicaron entre sí para difundir odio, organizaron campañas a través de Facebook. Pero Facebook permaneció en silencio.'",
+          "lawsuit": "En 2021, las víctimas demandaron a Facebook por 150.000 millones de dólares. En 2025, Sawyeddollah presentó una denuncia de whistleblower ante la SEC acusando a Meta de engañar a sus accionistas sobre su papel en el genocidio.",
+          "sources": [
+            { "outlet": "Amnistía Internacional — informe 'The Social Atrocity'", "url": "https://www.amnesty.org/en/latest/news/2022/09/myanmar-facebooks-systems-promoted-violence-against-rohingya-meta-owes-reparations-new-report/" },
+            { "outlet": "PBS NewsHour", "url": "https://www.pbs.org/newshour/world/amnesty-report-finds-facebook-amplified-hate-ahead-of-rohingya-massacre-in-myanmar" },
+            { "outlet": "Harvard Law School — Systemic Justice Project", "url": "https://systemicjustice.org/article/facebook-and-genocide-how-facebook-contributed-to-genocide-in-myanmar-and-why-it-will-not-be-held-accountable/" },
+            { "outlet": "Wikipedia — Genocidio rohinyá", "url": "https://en.wikipedia.org/wiki/Rohingya_genocide" }
+          ]
+        },
+        {
+          "name": "Profesor Maereg Amare Abraha",
+          "country": "Etiopía",
+          "year": 2023,
+          "tag": "Asesinado a plena luz del día tras una campaña de difamación en Facebook",
+          "story": "Profesor de Química Analítica en la Universidad de Bahir Dar. El 2 de noviembre de 2023 fue asesinado por un grupo paramilitar a plena luz del día frente a su casa. En las semanas previas, una página de Facebook con 50.000 seguidores publicó múltiples acusaciones falsas contra él. Facebook ignoró las advertencias.",
+          "punchline": "Sin las publicaciones de Facebook, la turba no habría podido conocer su paradero. El bufete británico Foxglove describió la tragedia como 'muerte por diseño'.",
+          "sources": [
+            { "outlet": "Annenberg School of Communication — University of Pennsylvania", "url": "https://www.asc.upenn.edu/research/centers/milton-wolf-seminar-media-and-diplomacy/blog/road-hell-paved-good-intentions-role-facebook-fuelling-ethnic-violence" }
+          ]
+        }
+      ],
+      "punchline": "Cuando el algoritmo gana audiencia con tu odio, tu salud o tu muerte, el algoritmo lo hará otra vez."
+    },
+    {
+      "id": "03",
+      "number": "III",
+      "slug": "persecucion",
+      "title": "Tweet, prisión, futuro destruido",
+      "subtitle": "En democracias europeas, la gente cumple condenas por bromas y opiniones en redes.",
+      "thesis": "Las redes son archivos permanentes y públicos de cada palabra que pronuncias. Los Estados democráticos los usan para procesar penalmente a sus ciudadanos.",
+      "stories": [
+        {
+          "name": "Pablo Hasél",
+          "country": "España",
+          "tag": "Cumple seis años y dos meses de prisión por sus tuits y letras",
+          "story": "Rapero condenado en 2018 a nueve meses por enaltecimiento del terrorismo y por insultar y calumniar a la monarquía y a las fuerzas de seguridad del Estado, tras publicar una serie de tuits llamando 'mafioso' al ex rey Juan Carlos I y acusando a la policía de torturar y matar a manifestantes y migrantes. Fue arrestado en febrero de 2021 después de atrincherarse en la Universidad de Lleida. Lleva en prisión desde entonces. El Tribunal Europeo de Derechos Humanos declaró su recurso inadmisible en noviembre de 2023.",
+          "petition": "Más de 200 figuras del mundo de la cultura —incluyendo a Pedro Almodóvar, Javier Bardem y Joan Manuel Serrat— firmaron una petición contra su encarcelamiento.",
+          "tweet_example": "Uno de los tuits por los que fue condenado: 'Las protestas son necesarias pero no suficientes, apoyemos a quienes han ido más lejos' acompañado de una foto de Victoria Gómez, miembro de los GRAPO.",
+          "sources": [
+            { "outlet": "Rolling Stone — perfil completo del caso, 4 años después", "url": "https://www.rollingstone.com/music/music-features/pablo-hasel-rapper-spain-prison-1235268501/" },
+            { "outlet": "Al Jazeera", "url": "https://www.aljazeera.com/news/2021/2/16/spanish-police-arrest-rapper-convicted-in-free-speech-case" },
+            { "outlet": "CBS News", "url": "https://www.cbsnews.com/news/pablo-hasel-spain-barcelona-protest-rapper-arrest-tweets-free-speech/" }
+          ]
+        },
+        {
+          "name": "Cassandra Vera",
+          "age_at_conviction": 22,
+          "country": "España",
+          "tag": "Estudiante. Condenada por bromas en Twitter sobre un atentado de 1973.",
+          "story": "Recibió una sentencia de un año de prisión suspendida en 2017 por 'humillar' a víctimas del terrorismo, en relación con bromas en Twitter sobre el asesinato del primer ministro franquista Luis Carrero Blanco en 1973. La sentencia resultó en la pérdida de su beca universitaria y la inhabilitación para empleo público durante siete años.",
+          "irony": "Entre quienes salieron a defenderla estaba la propia sobrina de Carrero Blanco, que dijo tener 'miedo de una sociedad donde la libertad de expresión, por lamentable que sea, pueda llevar a la cárcel'.",
+          "sources": [
+            { "outlet": "Amnesty International UK", "url": "https://www.amnesty.org.uk/knowledge-hub/all-resources/spains-terrorism-law-outlawing-political-satire-new-report/" },
+            { "outlet": "Amnistía Internacional — informe completo", "url": "https://www.amnesty.org/en/latest/news/2018/03/spain-counter-terror-law-used-to-crush-satire-and-creative-expression-online/" }
+          ]
+        }
+      ],
+      "context_data": {
+        "stat": "El número de personas procesadas bajo el Artículo 578 del Código Penal español pasó de 3 en 2011 a 39 en 2017. Sólo entre 2016 y 2017, 66 personas fueron condenadas bajo esa ley.",
+        "operations": "Desde 2014, cuatro operaciones policiales coordinadas —apodadas 'Operaciones Araña'— han llevado al arresto de decenas de personas por publicaciones en redes sociales, principalmente en Twitter y Facebook.",
+        "anonymous_quote": "Un hombre identificado como J.C.V., condenado a un año de prisión suspendida por 13 tuits, dijo a Amnistía Internacional: 'El objetivo es crear un clima de autocensura en la población. Y lo consiguieron conmigo.'"
+      },
+      "punchline": "Una broma es prueba documental para el resto de tu vida."
+    },
+    {
+      "id": "04",
+      "number": "IV",
+      "slug": "vigilancia",
+      "title": "La cara entregada a desconocidos",
+      "subtitle": "Gafas inteligentes, reconocimiento facial y selfies que llevan a tu puerta.",
+      "thesis": "Tu rostro y tu rutina ya no son privados. Y aunque tú no uses estas tecnologías, otros las usan contra ti.",
+      "stories": [
+        {
+          "name": "I-XRAY: doxxing en tiempo real con gafas Meta Ray-Ban",
+          "year": 2024,
+          "tag": "Dos estudiantes de Harvard demostraron cómo identificar a cualquier desconocido en segundos",
+          "story": "AnhPhu Nguyen y Caine Ardayfio, estudiantes de Harvard, integraron las gafas inteligentes Meta Ray-Ban con software de reconocimiento facial (PimEyes) y un modelo de lenguaje. El resultado: un dispositivo capaz de identificar a desconocidos en segundos. Nombres, números de teléfono, direcciones de casa, todo recuperable al instante. En las pruebas, identificaron a viajeros en una estación de metro extrayendo datos personales de bases de datos públicas. Iniciaron conversaciones con personas que nunca habían visto, llamándolas por su nombre.",
+          "purpose": "Los estudiantes hicieron público el experimento como advertencia. Publicaron una guía para que la gente pueda eliminar sus datos de las bases que alimentan estas búsquedas.",
+          "sources": [
+            { "outlet": "The Verge", "url": "https://www.theverge.com/2024/10/2/24260262/ray-ban-meta-smart-glasses-doxxing-privacy" },
+            { "outlet": "Johns Hopkins Space Security", "url": "https://spacesecurity.wse.jhu.edu/2024/10/05/smart-glasses-leads-to-real-time-doxxing/" },
+            { "outlet": "Straight Arrow News — vídeo demostración", "url": "https://san.com/cc/modified-meta-glasses-reveal-dangerous-potential-for-doxxing/" }
+          ],
+          "removal_guide": {
+            "title": "Guía publicada por los autores para borrar tus datos",
+            "url": "https://docs.google.com/document/d/1iWCqmaOUKhKjcKSktIwC3NNANoFP7vPsRvcbOIup_BA/edit"
+          }
+        },
+        {
+          "name": "BBC: las gafas Meta usadas para grabar mujeres en secreto",
+          "year": 2025,
+          "tag": "Decenas de influencers usando las gafas inteligentes para vídeos no consentidos",
+          "story": "Una investigación de la BBC en enero de 2025 reveló que decenas de influencers masculinos en TikTok e Instagram estaban usando las gafas inteligentes Ray-Ban de Meta para grabar mujeres en secreto.",
+          "victims": [
+            { "name": "Dilara", "age": 21, "story": "Estaba en su pausa para comer cuando un hombre entabló conversación y la grabó sin que ella lo supiera. El vídeo subió a TikTok, alcanzó 1,3 millones de visualizaciones e incluía su número de teléfono. Fue inundada de mensajes y llamadas." },
+            { "name": "Kim", "story": "Fue grabada en una playa compartiendo detalles sobre su empleador y su familia, nada de lo cual habría revelado de saber que había una cámara grabando." }
+          ],
+          "led_indicator_failure": "Las gafas tienen un LED que se activa al grabar, pero la BBC encontró múltiples vídeos en línea que muestran cómo cubrirlo o desactivarlo. Ninguna de las mujeres entrevistadas notó el indicador.",
+          "key_insight": "El riesgo de privacidad es relacional, no individual. Aunque tú nunca compres estas gafas, tu cara puede acabar grabada por alguien que sí las tiene.",
+          "sources": [
+            { "outlet": "National Law Review — análisis legal y cobertura de la investigación BBC", "url": "https://natlawreview.com/article/smart-glasses-and-privacy-wearable-surveillance-and-disclosure-issues" }
+          ]
+        },
+        {
+          "name": "Ena Matsuoka — la selfie que llevó a un agresor hasta su puerta",
+          "year": 2019,
+          "country": "Japón",
+          "tag": "Localizada por el reflejo de una parada de autobús en sus pupilas",
+          "story": "Cantante de 21 años, miembro del grupo de J-pop Tenshi Tsukinukeni Yomi. El 1 de septiembre de 2019, un hombre la atacó al regresar a su casa, la arrastró a una zona apartada y la agredió sexualmente hasta que ella consiguió escapar. El acosador, Hibiki Sato (26), confesó cómo la había localizado: hizo zoom en una de sus selfies y identificó el reflejo de una señal de parada de autobús en sus ojos. Usó Google Street View para localizar la zona. Luego analizó otras fotos para determinar el apartamento exacto: comparó las cortinas, calculó el ángulo del sol para deducir el piso. El día del ataque, esperó en la parada del autobús hasta verla llegar.",
+          "expert_warning": "Shuichiro Hoshi, profesor de la Universidad Metropolitana de Tokio: 'La calidad de imagen de las cámaras de los smartphones se ha vuelto muy fina, y ha surgido un nuevo riesgo en el que la información privada se filtra de forma inesperada.'",
+          "punchline": "Una selfie tuya contiene tu dirección.",
+          "sources": [
+            { "outlet": "Newsweek", "url": "https://www.newsweek.com/stalker-finds-idol-reflection-pupils-1464373" },
+            { "outlet": "Washington Post", "url": "https://www.washingtonpost.com/technology/2019/10/16/your-smartphone-takes-amazing-selfies-those-selfies-could-tell-stalkers-where-you-live/" },
+            { "outlet": "Futurism", "url": "https://futurism.com/the-byte/cyberstalker-victim-enhancing-reflection" }
+          ]
+        }
+      ],
+      "punchline": "No hace falta que tú uses la cámara. Otros la usan por ti."
+    },
+    {
+      "id": "05",
+      "number": "V",
+      "slug": "filtraciones",
+      "title": "Tus datos: ya no son tuyos",
+      "subtitle": "533 millones de personas filtradas. Facebook decidió no avisar a ninguna.",
+      "thesis": "Cuando confías tus datos a una red social, los estás confiando también a quienes la hackean, a quienes los compran, y a la propia empresa cuando decida que tu privacidad cuesta demasiado.",
+      "headline_breach": {
+        "title": "La filtración de Facebook de 2021",
+        "scale": "533 millones de personas en 106 países",
+        "data_exposed": [
+          "Nombres completos",
+          "Números de teléfono",
+          "IDs de Facebook",
+          "Ubicaciones (actuales y pasadas)",
+          "Fechas de nacimiento",
+          "Estados civiles",
+          "Biografías",
+          "Direcciones de correo electrónico (en algunos casos)",
+          "Empleadores"
+        ],
+        "outrage": "Facebook decidió no notificar a ninguno de los 530+ millones de usuarios afectados. Y declaró públicamente que no tenía planes de hacerlo.",
+        "why_phone_numbers_matter": "Los números de teléfono se usan cada vez más para autenticación de dos factores. Como dijo el experto en ciberseguridad Adam Levin: 'El número de teléfono es un identificador universal.' Tu número filtrado es la llave maestra para suplantarte.",
+        "free_distribution": "En abril de 2021, los datos se publicaron gratis en un foro de hackers. Antes se vendían; ahora cualquiera los descarga.",
+        "sources": [
+          { "outlet": "NPR", "url": "https://www.npr.org/2021/04/09/986005820/after-data-breach-exposes-530-million-facebook-says-it-will-not-notify-users" },
+          { "outlet": "Twingate — análisis técnico", "url": "https://www.twingate.com/blog/tips/facebook-data-breach" },
+          { "outlet": "Bitdefender", "url": "https://www.bitdefender.com/en-us/blog/hotforsecurity/phone-numbers-and-associated-profile-info-of-533-facebook-users-leaked-online" }
+        ]
+      },
+      "breach_timeline": [
+        { "year": 2018, "event": "Escándalo Cambridge Analytica", "scale": "87 millones de usuarios", "detail": "Datos personales usados sin consentimiento para perfilamiento político en la campaña de Trump 2016 y el referéndum del Brexit. Acuerdo final: 725 millones de dólares." },
+        { "year": 2019, "event": "Servidor AWS sin proteger", "scale": "540 millones de registros", "detail": "Desarrolladores externos almacenaban datos de Facebook en servidores de Amazon sin protección durante años." },
+        { "year": 2019, "event": "Multa de la FTC", "scale": "5.000 millones de dólares", "detail": "La mayor multa de privacidad jamás impuesta por la FTC hasta entonces." },
+        { "year": 2019, "event": "Servidor expuesto", "scale": "419 millones de usuarios", "detail": "IDs y números de teléfono accesibles públicamente sin contraseña." },
+        { "year": 2019, "event": "Base de datos en dark web", "scale": "267 millones de registros", "detail": "Nombres, IDs y números de teléfono." },
+        { "year": 2021, "event": "Filtración masiva (la grande)", "scale": "533 millones de personas", "detail": "Datos publicados gratis en foros. Facebook decide no notificar." },
+        { "year": 2022, "event": "Multa DPC Irlanda", "scale": "277 millones de dólares", "detail": "Sanción europea por la filtración de 533M." },
+        { "year": 2023, "event": "Multa DPC Irlanda", "scale": "1.300 millones de dólares", "detail": "Por transferencias ilegales de datos de la UE a EE.UU." },
+        { "year": 2024, "event": "Brecha de códigos 2FA", "scale": "Millones de códigos", "detail": "Vulnerabilidad en YX International expone códigos de autenticación de dos factores de Facebook, Google y otras." }
+      ],
+      "sources_timeline": [
+        { "outlet": "NordVPN — cronología completa de filtraciones de Facebook", "url": "https://nordvpn.com/blog/facebook-data-breach/" },
+        { "outlet": "Firewall Times — historia completa", "url": "https://firewalltimes.com/facebook-data-breach-timeline/" },
+        { "outlet": "Huntress — análisis técnico de la brecha 2021", "url": "https://www.huntress.com/threat-library/data-breach/facebook-user-data-breach" }
+      ],
+      "self_check": {
+        "title": "Comprueba si tus datos están filtrados",
+        "tool_name": "Have I Been Pwned",
+        "url": "https://haveibeenpwned.com",
+        "description": "Servicio gratuito creado por Troy Hunt. Introduces tu email y te dice en qué brechas conocidas aparece. La base incluye los 533 millones de Facebook."
+      },
+      "punchline": "Aunque cierres la cuenta hoy, lo que ya filtraron seguirá circulando para siempre."
+    },
+    {
+      "id": "06",
+      "number": "VI",
+      "slug": "feed-a-campo-de-batalla",
+      "title": "De tu feed al campo de batalla",
+      "subtitle": "Cómo el modelo de negocio de las redes alimenta las máquinas de matar.",
+      "thesis": "Palantir no genera datos. Tú los generas. Cada publicación es materia prima para sistemas de targeting militar, deportación masiva y vigilancia gubernamental. Es la misma cadena.",
+      "chain": {
+        "title": "La cadena: cómo va de tu pantalla a Gaza",
+        "intro": "Esta no es una conexión teórica. Cada eslabón está documentado por su propia documentación corporativa o por investigaciones periodísticas verificadas.",
+        "links": [
+          { "step": 1, "title": "Tú publicas", "description": "Cara, ubicación, red de contactos, opiniones políticas, salud mental, rutinas. Cada interacción es un dato." },
+          { "step": 2, "title": "La plataforma recolecta", "description": "Meta, ByteDance, X y otras retienen, perfilan y comercializan estos datos. Los algoritmos de recomendación los usan para mantenerte enganchado y para segmentar publicidad." },
+          { "step": 3, "title": "Brokers de datos compran y revenden", "description": "Empresas como Acxiom, Experian o LexisNexis compran y agregan estos perfiles. Cualquier cliente —incluyendo gobiernos— puede comprarlos." },
+          { "step": 4, "title": "Palantir integra todo", "description": "Su software Gotham 'centraliza todo lo que una agencia sabe sobre una persona en un solo lugar'. Integra datos de fuentes 'comerciales, propietarias y públicas'. Eso te incluye a ti.", "source_quote": "El software de Palantir 'se sienta encima de los sistemas existentes del cliente y le permite integrar y analizar datos sin necesidad de arreglar la arquitectura subyacente'.", "source": "Wikipedia — Palantir Technologies", "url": "https://en.wikipedia.org/wiki/Palantir_Technologies" },
+          { "step": 5, "title": "El sistema decide a quién matar", "description": "Los datos integrados alimentan sistemas como Lavender (Israel), que mantiene listas de objetivos humanos. Lavender 'combina una amplia gama de inputs de inteligencia —desde feeds de vídeo y mensajes de chat interceptados hasta datos de redes sociales— para evaluar la probabilidad de que un individuo sea un combatiente'.", "source": "Foreign Policy — investigación basada en +972 Magazine", "url": "https://foreignpolicy.com/2024/05/02/israel-military-artificial-intelligence-targeting-hamas-gaza-deaths-lavender/" }
+        ]
+      },
+      "palantir_business_model": {
+        "title": "Cómo Palantir entrena sus modelos: a costa de tus datos",
+        "key_point": "Palantir NO genera datos propios. Su modelo de negocio es completamente parasitario: vive de absorber, integrar y operacionalizar datos generados por otros — incluyéndote a ti.",
+        "data_sources": [
+          { "type": "Datos gubernamentales", "description": "Lo que las agencias ya recopilan: impuestos, fronteras, vigilancia, sanidad, registros policiales. Palantir los unifica." },
+          { "type": "Datos comerciales", "description": "Comprados a brokers de datos que recopilan información de millones de personas a partir de redes sociales, apps, programas de fidelización y compras." },
+          { "type": "Datos públicos extraídos de internet", "description": "Incluyendo redes sociales. Tus publicaciones, comentarios, geolocalizaciones, redes de contactos. Todo scrapeable, todo agregable." },
+          { "type": "Etiquetado humano subcontratado", "description": "Palantir se asoció con Enabled Intelligence en 2025: ejércitos de trabajadores anotando imágenes satelitales, vídeo, audio y texto para entrenar modelos militares más precisos. Los humanos enseñan a la máquina a matar mejor.", "source": "DefenseScoop", "url": "https://defensescoop.com/2025/02/05/palantir-enabled-intelligence-partnership-foundry/" }
+        ],
+        "feedback_loop": {
+          "title": "El bucle cerrado: cada bombardeo enseña a la máquina",
+          "description": "La propia descripción corporativa de Palantir: 'Los datos son ingeridos por Foundry o Gotham; son contextualizados por la Ontología; son activados por AIP, que permite a humanos e IA ejecutar simulaciones y proponer acciones; y cuando se toma una decisión, esa acción y su resultado se vuelven a escribir en la Ontología. Este bucle de retroalimentación enriquece el gemelo digital con el tiempo, haciendo que las recomendaciones futuras impulsadas por IA sean más precisas.'",
+          "translation": "Traducción: cada bombardeo enseña a la máquina cómo bombardear mejor. Cada deportación refina el sistema de deportaciones. Los muertos, los presos y los desplazados son los datos de entrenamiento.",
+          "source": "Klover.ai — análisis de la estrategia de Palantir",
+          "url": "https://www.klover.ai/palantir-ai-strategy-path-to-ai-dominance-from-defense-to-enterprise/"
+        }
+      },
+      "gaza_systems": {
+        "title": "Las máquinas",
+        "intro": "Israel ha usado al menos tres sistemas de IA documentados en su campaña en Gaza desde octubre de 2023. La investigación principal fue publicada por +972 Magazine y Local Call, basada en testimonios de seis oficiales de inteligencia israelíes.",
+        "systems": [
+          {
+            "name": "Lavender",
+            "function": "Genera listas de objetivos humanos. Asigna a residentes de Gaza una puntuación numérica indicando su 'probabilidad' de ser miembro de un grupo armado.",
+            "scale": "Identificó hasta 37.000 hombres palestinos como objetivos.",
+            "error_rate": "Los oficiales israelíes admitieron a +972 que Lavender se equivoca en aproximadamente el 10% de los casos.",
+            "human_oversight": "Los oficiales dedicaban una media de 20 segundos a aprobar cada strike — a menudo solo verificando que el objetivo fuera un hombre.",
+            "officer_quote": "'No estábamos interesados en matar a operativos [de Hamás] solo cuando estaban en un edificio militar o realizando actividad militar. Al contrario, las FDI los bombardearon en sus casas sin dudarlo, como primera opción. Es mucho más fácil bombardear la casa de una familia. El sistema está construido para buscarlos en estas situaciones.'"
+          },
+          {
+            "name": "Where's Daddy?",
+            "function": "Rastreaba a los objetivos identificados por Lavender hasta que llegaban a sus casas, momento en el que se ejecutaba el bombardeo.",
+            "purpose": "Diseñado intencionalmente para atacar a los objetivos cuando estaban en casa por la noche con sus familias.",
+            "result": "Familias palestinas enteras eliminadas dentro de sus hogares."
+          },
+          {
+            "name": "The Gospel (Habsora)",
+            "function": "Marca edificios y estructuras como objetivos. Un ex oficial lo describió como una 'fábrica de asesinatos masivos'.",
+            "scale": "Más de 12.000 objetivos identificados solo en las primeras semanas. Las FDI llegaron a golpear hasta 250 objetivos al día.",
+            "officer_quote_about_civilians": "Los oficiales testificaron que para asesinar a comandantes senior de Hamás se consideró aceptable matar 'cientos' de civiles colaterales. Para combatientes de bajo rango, las cifras también fueron sin precedentes."
+          }
+        ],
+        "casualties_context": "En octubre de 2023, al menos 5.139 civiles —incluyendo 1.900 niños— fueron asesinados en Gaza, la cifra mensual de víctimas civiles más alta registrada por Airwars desde 2014. La mayoría de las muertes ocurrieron en edificios residenciales, con familias asesinadas juntas, una media de 15 miembros por incidente.",
+        "sources": [
+          { "outlet": "+972 Magazine — investigación original 'Lavender'", "url": "https://www.972mag.com/lavender-ai-israeli-army-gaza/", "author": "Yuval Abraham" },
+          { "outlet": "+972 Magazine — análisis de la responsabilidad humana", "url": "https://www.972mag.com/israel-gaza-lavender-ai-human-agency/" },
+          { "outlet": "Foreign Policy — análisis del precedente", "url": "https://foreignpolicy.com/2024/05/02/israel-military-artificial-intelligence-targeting-hamas-gaza-deaths-lavender/" },
+          { "outlet": "Democracy Now! — entrevista con Yuval Abraham", "url": "https://www.democracynow.org/2024/4/5/israel_ai" },
+          { "outlet": "The Conversation — análisis técnico", "url": "https://theconversation.com/gaza-war-israel-using-ai-to-identify-human-targets-raising-fears-that-innocents-are-being-caught-in-the-net-227422" },
+          { "outlet": "The Cairo Review — Gaza como laboratorio de IA", "url": "https://www.thecairoreview.com/essays/gaza-israels-ai-human-laboratory/" },
+          { "outlet": "Wikipedia — IA en el targeting de Gaza", "url": "https://en.wikipedia.org/wiki/AI-assisted_targeting_in_the_Gaza_Strip" },
+          { "outlet": "AI Incident Database — Incidente 672", "url": "https://incidentdatabase.ai/cite/672/" }
+        ]
+      },
+      "palantir_quotes": {
+        "title": "Lo que dice el CEO. Literalmente.",
+        "intro": "Alex Karp, cofundador y CEO de Palantir, ha sido públicamente claro sobre la oportunidad comercial que la guerra representa para su empresa.",
+        "quotes": [
+          { "quote": "Nuestros productos han tenido una gran demanda. Hemos comenzado a suministrar productos diferentes de los que suministrábamos antes [del inicio de la guerra].", "context": "Entrevista en Tel Aviv, refiriéndose al aumento de demanda tras el inicio de la guerra de Gaza en octubre de 2023.", "source": "Business & Human Rights Resource Centre", "url": "https://www.business-humanrights.org/en/latest-news/palantir-allegedly-supplying-israel-with-ai-tools-amid-israels-war-in-gaza/" },
+          { "quote": "Hemos perdido empleados. Estoy seguro de que perderemos empleados. Si tienes una posición que nunca te cuesta perder un empleado, no es una posición.", "context": "Entrevista en CNBC 'Money Movers', sobre los empleados que han dimitido por su postura pro-Israel.", "source": "Calcalist / CTech", "url": "https://www.calcalistech.com/ctechnews/article/hy1q67e0a" },
+          { "quote": "Estamos muy bien conocidos en Israel. Israel aprecia nuestro producto.", "context": "Entrevista en Fox Business, diciembre 2023.", "source": "Business & Human Rights Resource Centre", "url": "https://www.business-humanrights.org/en/latest-news/palantir-spacex-allegedly-complicit-in-war-crimes-amid-israels-war-in-gaza/" }
+        ]
+      },
+      "punchline": "Palantir no genera datos. Tú los generas. Cada publicación es materia prima."
+    }
+  ],
+  "interactive_tool": {
+    "id": "calculadora-vida-recuperada",
+    "title": "Calculadora de vida recuperada",
+    "subtitle": "¿Cuánto te están quitando? Calcúlalo.",
+    "intro": "El usuario promedio mundial pasa 2h 23min al día en redes sociales. Eso son ~36 días al año. Cinco semanas. Casi un mes y medio de vida consciente al año, entregadas a un algoritmo diseñado para mantenerte enganchado.",
+    "global_average_minutes_per_day": 143,
+    "average_source": { "outlet": "DataReportal — Digital 2024 Global Overview Report", "url": "https://datareportal.com/reports/digital-2024-global-overview-report" },
+    "input": { "label": "¿Cuántas horas al día pasas en redes sociales?", "type": "slider", "min": 0.5, "max": 10, "step": 0.5, "default": 2.5, "unit": "horas / día" },
+    "calculations": {
+      "per_year_hours": "horas_diarias * 365",
+      "per_year_days_awake": "horas_diarias * 365 / 16",
+      "per_decade_days_awake": "horas_diarias * 365 * 10 / 16",
+      "lifetime_years_awake": "horas_diarias * 365 * 60 / (16 * 365)",
+      "explanation": "Asumimos 16 horas despiertas al día, vida útil de 60 años más como adulto."
+    },
+    "comparisons": {
+      "title": "Lo que podrías hacer en ese tiempo",
+      "intro": "Cada elemento muestra cuántas veces podrías hacer X con las horas que dedicas a redes en un año.",
+      "items": [
+        { "activity": "Leer libros", "average_duration_hours": 8, "icon": "book", "description": "Una novela de 300 páginas se lee en ~8 horas." },
+        { "activity": "Aprender un idioma a nivel conversacional", "average_duration_hours": 480, "icon": "language", "description": "Nivel B1 estimado en ~480 horas de práctica." },
+        { "activity": "Correr maratones (entrenamiento + carrera)", "average_duration_hours": 200, "icon": "run", "description": "Plan completo de entrenamiento + carrera." },
+        { "activity": "Ver el cielo nocturno completo", "average_duration_hours": 2, "icon": "stars", "description": "Una sesión decente de observación." },
+        { "activity": "Cenas largas con amigos", "average_duration_hours": 3, "icon": "dinner", "description": "Una cena que merezca ser recordada." },
+        { "activity": "Películas completas", "average_duration_hours": 2, "icon": "film", "description": "Una película con principio, medio y final." },
+        { "activity": "Aprender a tocar guitarra (nivel intermedio)", "average_duration_hours": 300, "icon": "guitar", "description": "Práctica regular hasta tocar canciones complejas." },
+        { "activity": "Caminatas de un día completo", "average_duration_hours": 8, "icon": "hike", "description": "Una ruta de montaña, costa o ciudad." }
+      ]
+    },
+    "verdict_thresholds": [
+      { "max_hours": 1, "message": "Estás por debajo de la media mundial. Pero todavía pierdes ~23 días de vida consciente al año.", "tone": "soft" },
+      { "max_hours": 2.5, "message": "Estás cerca de la media. Pierdes más de un mes de vida consciente al año.", "tone": "medium" },
+      { "max_hours": 5, "message": "Más del doble de la media. Has entregado el equivalente a un trabajo a tiempo parcial al algoritmo. Sin sueldo.", "tone": "hard" },
+      { "max_hours": 99, "message": "Esto ya no es uso. Es dependencia documentada. Y los diseñadores de la app lo saben — fueron contratados para conseguir exactamente esto.", "tone": "brutal" }
+    ],
+    "share_format": {
+      "title": "Compártelo",
+      "template": "Las redes me están robando {días} días de vida consciente al año. ¿Cuántos te roban a ti? #CierraLasQuePuedas"
+    }
+  },
+  "manifesto": {
+    "title": "Manifiesto",
+    "subtitle": "Diez razones para cerrar lo que puedas, hoy.",
+    "items": [
+      { "n": 1, "text": "Porque están diseñadas para engancharte. Lo admiten sus propios ingenieros." },
+      { "n": 2, "text": "Porque sus algoritmos ya han sido judicialmente reconocidos como contribuyentes a muertes." },
+      { "n": 3, "text": "Porque han alimentado al menos un genocidio reconocido por la ONU." },
+      { "n": 4, "text": "Porque hay personas cumpliendo años de cárcel por bromas en Twitter." },
+      { "n": 5, "text": "Porque tu cara puede ser identificada por desconocidos en segundos. Aunque tú no uses esas gafas." },
+      { "n": 6, "text": "Porque una selfie puede contener tu dirección sin que lo sepas." },
+      { "n": 7, "text": "Porque tus datos ya han sido filtrados, vendidos o regalados. Y nadie te lo va a notificar." },
+      { "n": 8, "text": "Porque los mismos datos que usan para venderte cosas se usan para entrenar máquinas que matan gente." },
+      { "n": 9, "text": "Porque cuando preguntan al CEO, dice que la guerra ha sido buena para el negocio." },
+      { "n": 10, "text": "Porque no es tarde, pero cada día que sigues dentro es otro día de materia prima entregada." }
+    ]
+  },
+  "actions": {
+    "title": "Cómo empezar",
+    "subtitle": "No te pedimos que lo cierres todo. Te pedimos que cierres lo que puedas.",
+    "tiers": [
+      {
+        "level": "Mínimo viable — hoy mismo",
+        "duration": "5 minutos",
+        "items": [
+          "Desactiva todas las notificaciones de redes sociales en tu teléfono.",
+          "Borra una sola app de tu pantalla principal. La que más uses.",
+          "Comprueba si tus datos están filtrados en haveibeenpwned.com",
+          "Activa autenticación de dos factores (con app, no SMS) en todas tus cuentas."
+        ]
+      },
+      {
+        "level": "Compromiso medio — esta semana",
+        "duration": "1 hora",
+        "items": [
+          "Borra del teléfono las apps de las redes que menos uses. Si las necesitas, accede solo desde el navegador.",
+          "Descarga tu archivo de datos personales de cada plataforma. Verás de cuánto disponen.",
+          "Limita el uso a 30 minutos diarios usando los controles del propio sistema operativo.",
+          "Quita tu fecha de nacimiento, ubicación y número de teléfono de los perfiles públicos.",
+          "Sigue la guía I-XRAY para borrarte de las bases de datos públicas que alimentan el reconocimiento facial.",
+          "Comparte la calculadora con tres personas."
+        ],
+        "removal_guide_link": "https://docs.google.com/document/d/1iWCqmaOUKhKjcKSktIwC3NNANoFP7vPsRvcbOIup_BA/edit"
+      },
+      {
+        "level": "Compromiso alto — este mes",
+        "duration": "Varias horas",
+        "items": [
+          "Cierra las cuentas de las redes que no necesitas (no solo desactivar — solicitar borrado completo).",
+          "Migra tus comunicaciones a apps cifradas: Signal para mensajes, ProtonMail o Tutanota para correo.",
+          "Sustituye el feed algorítmico por feeds RSS. Tú decides qué leer y cuándo.",
+          "Únete a una comunidad presencial: deporte, lectura, voluntariado, oficios manuales.",
+          "Si necesitas presencia digital pública, plantéate alternativas federadas como Mastodon."
+        ]
+      }
+    ]
+  },
+  "alternatives": {
+    "title": "Alternativas reales",
+    "subtitle": "No te pedimos vivir aislado. Te ofrecemos opciones que no te explotan.",
+    "categories": [
+      {
+        "category": "Mensajería privada",
+        "options": [
+          { "name": "Signal", "url": "https://signal.org", "description": "Cifrado de extremo a extremo verificado. Sin ánimo de lucro. No vende datos." },
+          { "name": "Matrix / Element", "url": "https://element.io", "description": "Federado, descentralizado, código abierto." }
+        ]
+      },
+      {
+        "category": "Correo electrónico",
+        "options": [
+          { "name": "ProtonMail", "url": "https://proton.me/mail", "description": "Cifrado por defecto. Servidores en Suiza." },
+          { "name": "Tutanota", "url": "https://tuta.com", "description": "Cifrado, código abierto, base en Alemania." }
+        ]
+      },
+      {
+        "category": "Redes sociales (si necesitas)",
+        "options": [
+          { "name": "Mastodon", "url": "https://joinmastodon.org", "description": "Federada, sin algoritmo predador, sin publicidad." },
+          { "name": "Pixelfed", "url": "https://pixelfed.org", "description": "Alternativa a Instagram. Federada, sin algoritmo manipulador." }
+        ]
+      },
+      {
+        "category": "Información y lectura",
+        "options": [
+          { "name": "Lectores RSS (Feedly, NetNewsWire, etc.)", "url": "https://en.wikipedia.org/wiki/RSS", "description": "Tú eliges las fuentes. Sin algoritmo entre tú y la información." },
+          { "name": "Newsletters por email", "url": "", "description": "Buttondown, Substack, Beehiiv. Lectura fuera del scroll infinito." }
+        ]
+      }
+    ]
+  },
+  "ui": {
+    "skip_to_content": "Saltar al contenido",
+    "table_of_contents": "Capítulos",
+    "language_label": "Idioma",
+    "auto_detect": "Detección automática",
+    "translation_disclaimer": "Traducción provisional generada por IA. El texto original en español es la fuente autoritativa. Ayúdanos a mejorar esta traducción.",
+    "sources_label": "Fuentes",
+    "show_sources": "Ver fuentes",
+    "hide_sources": "Ocultar fuentes",
+    "calculator": {
+      "result_hours_year": "horas al año",
+      "result_days_year": "días de vida consciente al año",
+      "result_decade_days": "días por década",
+      "result_lifetime": "años de vida consciente perdidos en 60 años de vida adulta",
+      "share_button": "Compartir",
+      "copied": "Copiado al portapapeles",
+      "axis_hours": "horas / día",
+      "vs_global_average": "media mundial: 2h 23min / día"
+    },
+    "chapter_label": "Capítulo",
+    "read_more": "Leer más",
+    "to_top": "Volver arriba"
+  },
+  "footer": {
+    "tagline": "Cierra las que puedas.",
+    "license": "Esta campaña es libre. Cópiala, tradúcela, mejórala.",
+    "contact_placeholder": "[Tu canal de contacto / newsletter / Mastodon]",
+    "credits": "Datos verificados de fuentes citadas. Cada afirmación enlaza a su origen.",
+    "last_updated": "2026-04-30"
+  }
+}

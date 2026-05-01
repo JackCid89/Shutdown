@@ -1,0 +1,25 @@
+---
+import type { SiteContent } from '../content.config';
+interface Props { content: SiteContent }
+const { content } = Astro.props;
+const f = content.footer;
+const c = content.campaign;
+---
+<footer class="border-t border-ink/30 bg-ink text-bone">
+  <div class="mx-auto grid max-w-screen-xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-12">
+    <div class="lg:col-span-7">
+      <p class="font-display text-[clamp(2.5rem,6vw,4.5rem)] font-black leading-none tracking-tight">
+        {f.tagline}
+      </p>
+      <p class="mt-4 max-w-xl text-sm text-bone/70 sm:text-base">{f.credits}</p>
+    </div>
+    <div class="lg:col-span-5">
+      <p class="meta text-blood">{c.name}</p>
+      <p class="mt-2 text-sm text-bone/80">{f.license}</p>
+      <p class="mt-4 font-mono text-[0.72rem] text-bone/55">{f.contact_placeholder}</p>
+      <p class="mt-6 font-mono text-[0.72rem] uppercase tracking-widest text-bone/40">
+        last updated · {f.last_updated}
+      </p>
+    </div>
+  </div>
+</footer>

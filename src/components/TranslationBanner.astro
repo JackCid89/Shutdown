@@ -1,0 +1,19 @@
+---
+import type { SiteContent } from '../content.config';
+import type { LocaleCode } from '../i18n/locales';
+interface Props { locale: LocaleCode; content: SiteContent; isFallback: boolean }
+const { locale, content, isFallback } = Astro.props;
+const show = locale !== 'es';
+---
+{show && (
+  <div role="note" class="border-y border-ink/15 bg-paper/70">
+    <div class="mx-auto flex max-w-screen-xl items-start gap-3 px-4 py-2 sm:px-6">
+      <span class="mt-0.5 inline-block size-2 shrink-0 rounded-full bg-blood" aria-hidden="true"></span>
+      <p class="font-mono text-[0.72rem] leading-snug opacity-80">
+        {isFallback
+          ? '⚠︎ Translation pending — showing Spanish original. / Traducción pendiente.'
+          : content.ui.translation_disclaimer}
+      </p>
+    </div>
+  </div>
+)}

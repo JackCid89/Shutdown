@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import TranslationBanner from '../components/TranslationBanner.astro';
+import Hero from '../components/Hero.astro';
+import Chapter from '../components/Chapter.astro';
+import Calculator from '../components/Calculator.astro';
+import Manifesto from '../components/Manifesto.astro';
+import Actions from '../components/Actions.astro';
+import Alternatives from '../components/Alternatives.astro';
+import Footer from '../components/Footer.astro';
+import { loadSite } from '../i18n/utils';
+
+const locale = 'es' as const;
+const { content, isFallback } = await loadSite(locale);
+const title = `${content.campaign.name} — ${content.campaign.tagline}`;
+const description = content.campaign.subtitle;
+---
+<BaseLayout locale={locale} title={title} description={description} isFallback={isFallback}>
+  <Fragment slot="skip-label">{content.ui.skip_to_content}</Fragment>
+  <Nav locale={locale} content={content} />
+  <TranslationBanner locale={locale} content={content} isFallback={isFallback} />
+
+  <main id="main">
+    <Hero content={content} />
+
+    {content.chapters.map((c) => (
+      <Chapter chapter={c} content={content} />
+    ))}
+
+    <Calculator content={content} locale={locale} />
+    <Manifesto content={content} />
+    <Actions content={content} />
+    <Alternatives content={content} />
+  </main>
+
+  <Footer content={content} />
+</BaseLayout>

@@ -1,0 +1,64 @@
+---
+import { LOCALES, type LocaleCode } from '../i18n/locales';
+import { localePath } from '../i18n/utils';
+import type { SiteContent } from '../content.config';
+
+interface Props { locale: LocaleCode; content: SiteContent }
+const { locale, content } = Astro.props;
+const current = LOCALES.find(l => l.code === locale)!;
+---
+<details class="group relative">
+  <summary class="flex cursor-pointer list-none items-center gap-2 border border-ink/20 px-3 py-1.5 font-mono text-xs uppercase tracking-wider hover:border-ink/60">
+    <span aria-hidden="true">◐</span>
+    <span>{current.nativeName}</span>
+    <span class="opacity-50 transition group-open:rotate-180" aria-hidden="true">▾</span>
+  </summary>
+  <div class="absolute end-0 z-40 mt-1 max-h-[70vh] w-56 overflow-y-auto border border-ink/30 bg-bone shadow-xl">
+    <ul role="list" aria-label={content.ui.language_label}>
+      {LOCALES.map(l => (
+        <li>
+          <a
+            href={localePath(l.code)}
+            data-locale={l.code}
+            data-set-cookie="true"
+            lang={l.bcp47}
+            dir={l.dir}
+            class:list={[
+              'flex items-baseline justify-between gap-3 px-3 py-2 text-sm hover:bg-ink hover:text-bone',
+              l.code === locale && 'bg-ink/5 font-semibold'
+            ]}
+          >
+            <span>{l.nativeName}</span>
+            <span class="font-mono text-[0.65rem] uppercase opacity-50">{l.code}</span>
+          </a>
+        </li>
+      ))}
+      <li class="border-t border-ink/15">
+        <button
+          type="button"
+          id="auto-detect-lang"
+          class="block w-full px-3 py-2 text-start font-mono text-[0.7rem] uppercase tracking-wider opacity-70 hover:bg-ink hover:text-bone hover:opacity-100"
+        >
+          ↺ {content.ui.auto_detect}
+        </button>
+      </li>
+    </ul>
+  </div>
+</details>
+
+<script is:inline>
+  document.addEventListener('click', function (e) {
+    var target = e.target;
+    if (!(target instanceof Element)) return;
+    var link = target.closest('a[data-set-cookie="true"]');
+    if (link) {
+      var loc = link.getAttribute('data-locale');
+      if (loc) document.cookie = 'cierra_lang=' + loc + '; max-age=31536000; path=/; samesite=lax';
+      return;
+    }
+    if (target.id === 'auto-detect-lang' || target.closest('#auto-detect-lang')) {
+      document.cookie = 'cierra_lang=; max-age=0; path=/; samesite=lax';
+      location.assign('/');
+    }
+  });
+</script>

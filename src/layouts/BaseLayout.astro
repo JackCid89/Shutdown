@@ -1,0 +1,81 @@
+---
+import '../styles/global.css';
+import { LOCALES, getLocale, fontBodyClass, type LocaleCode } from '../i18n/locales';
+import { localePath } from '../i18n/utils';
+
+interface Props {
+  locale: LocaleCode;
+  title: string;
+  description: string;
+  isFallback?: boolean;
+}
+
+const { locale, title, description, isFallback = false } = Astro.props;
+const meta = getLocale(locale);
+const bodyFontClass = fontBodyClass(meta.font);
+const isDefault = locale === 'es';
+const canonical = new URL(localePath(locale), Astro.site ?? Astro.url).toString();
+---
+<!DOCTYPE html>
+<html lang={meta.bcp47} dir={meta.dir} class={meta.dir === 'rtl' ? 'rtl' : ''}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#f1ece4" />
+    <meta name="robots" content="index,follow" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <link rel="canonical" href={canonical} />
+    {LOCALES.map(l => (
+      <link
+        rel="alternate"
+        hreflang={l.bcp47}
+        href={new URL(localePath(l.code), Astro.site ?? Astro.url).toString()}
+      />
+    ))}
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href={new URL('/', Astro.site ?? Astro.url).toString()}
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content={meta.bcp47.replace('-', '_')} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    {/* Auto-detect language only on the default-locale page (`/`) and only
+        when no explicit choice is stored. */}
+    {isDefault && (
+      <script is:inline>
+        (function () {
+          try {
+            if (document.cookie.indexOf('cierra_lang=') !== -1) return;
+            var supported = ['es','en','zh','hi','fr','ar','bn','pt','ru','ur','id','de','ja','mr','te','tr','ta','vi','tl','ko'];
+            var langs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || 'es'];
+            for (var i = 0; i < langs.length; i++) {
+              var l = (langs[i] || '').toLowerCase();
+              var base = l.split('-')[0];
+              if (supported.indexOf(l) !== -1) { if (l !== 'es') location.replace('/' + l + '/'); return; }
+              if (supported.indexOf(base) !== -1) { if (base !== 'es') location.replace('/' + base + '/'); return; }
+            }
+          } catch (e) { /* noop */ }
+        })();
+      </script>
+    )}
+  </head>
+  <body class={bodyFontClass} data-locale={locale}>
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-2 focus:top-2 focus:z-50 focus:bg-ink focus:text-bone focus:px-3 focus:py-2 focus:font-mono focus:text-xs">
+      <slot name="skip-label" />
+    </a>
+    <slot />
+  </body>
+</html>

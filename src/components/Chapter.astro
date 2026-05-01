@@ -1,0 +1,26 @@
+---
+import ChapterHeader from './ChapterHeader.astro';
+import Punchline from './Punchline.astro';
+import BodySalud from './chapters/BodySalud.astro';
+import BodyMuertes from './chapters/BodyMuertes.astro';
+import BodyPersecucion from './chapters/BodyPersecucion.astro';
+import BodyVigilancia from './chapters/BodyVigilancia.astro';
+import BodyFiltraciones from './chapters/BodyFiltraciones.astro';
+import BodyCadena from './chapters/BodyCadena.astro';
+import type { SiteContent } from '../content.config';
+
+interface Props { chapter: SiteContent['chapters'][number]; content: SiteContent }
+const { chapter, content } = Astro.props;
+---
+<section aria-labelledby={chapter.slug + '-title'}>
+  <ChapterHeader chapter={chapter} content={content} />
+  <div class="mx-auto max-w-screen-xl px-4 pb-10 sm:px-6">
+    {chapter.slug === 'salud' && <BodySalud chapter={chapter} ui={content.ui} />}
+    {chapter.slug === 'muertes' && <BodyMuertes chapter={chapter} ui={content.ui} />}
+    {chapter.slug === 'persecucion' && <BodyPersecucion chapter={chapter} ui={content.ui} />}
+    {chapter.slug === 'vigilancia' && <BodyVigilancia chapter={chapter} ui={content.ui} />}
+    {chapter.slug === 'filtraciones' && <BodyFiltraciones chapter={chapter} ui={content.ui} />}
+    {chapter.slug === 'feed-a-campo-de-batalla' && <BodyCadena chapter={chapter} ui={content.ui} />}
+  </div>
+  <Punchline text={chapter.punchline} />
+</section>

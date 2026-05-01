@@ -1,0 +1,122 @@
+---
+import SourceList from '../SourceList.astro';
+import Quote from '../Quote.astro';
+import type { SiteContent } from '../../content.config';
+interface Props { chapter: SiteContent['chapters'][number]; ui: SiteContent['ui'] }
+const { chapter, ui } = Astro.props;
+---
+{/* Chain diagram */}
+{chapter.chain && (
+  <section>
+    <h3 class="font-display text-3xl font-bold tracking-tight sm:text-4xl">{chapter.chain.title}</h3>
+    <p class="mt-3 max-w-3xl text-base leading-relaxed sm:text-lg">{chapter.chain.intro}</p>
+
+    <ol role="list" class="mt-10 grid gap-4 lg:grid-cols-5">
+      {chapter.chain.links.map((l, i) => (
+        <li class="relative">
+          <article class="h-full border border-ink/20 bg-paper/40 p-5">
+            <p class="font-mono text-xs uppercase tracking-widest text-blood">{String(l.step).padStart(2,'0')}</p>
+            <h4 class="mt-2 font-display text-xl font-bold leading-tight">{l.title}</h4>
+            <p class="mt-3 text-sm leading-relaxed">{l.description}</p>
+            {l.source_quote && (
+              <p class="mt-3 border-s-2 border-blood ps-3 text-xs italic leading-snug text-ink/80">{l.source_quote}</p>
+            )}
+            {l.url && l.source && (
+              <p class="mt-2">
+                <a href={l.url} target="_blank" rel="noopener noreferrer" class="font-mono text-[0.7rem] text-blood underline underline-offset-4">↗ {l.source}</a>
+              </p>
+            )}
+          </article>
+          {i < chapter.chain!.links.length - 1 && (
+            <span aria-hidden="true" class="absolute end-[-0.85rem] top-1/2 hidden -translate-y-1/2 text-2xl text-blood lg:inline-block rtl:start-[-0.85rem] rtl:end-auto">→</span>
+          )}
+        </li>
+      ))}
+    </ol>
+  </section>
+)}
+
+{/* Palantir business model */}
+{chapter.palantir_business_model && (
+  <section class="mt-16 border-t border-ink/30 pt-10">
+    <h3 class="font-display text-3xl font-bold tracking-tight sm:text-4xl">
+      {chapter.palantir_business_model.title}
+    </h3>
+    <p class="mt-3 max-w-3xl border-s-4 border-blood ps-5 font-display text-xl italic leading-snug">
+      {chapter.palantir_business_model.key_point}
+    </p>
+
+    <ul role="list" class="mt-8 grid gap-4 sm:grid-cols-2">
+      {chapter.palantir_business_model.data_sources.map((d) => (
+        <li class="border border-ink/15 bg-paper/40 p-5">
+          <p class="meta text-blood">{d.type}</p>
+          <p class="mt-2 text-sm leading-relaxed">{d.description}</p>
+          {d.url && d.source && (
+            <p class="mt-2"><a href={d.url} target="_blank" rel="noopener noreferrer" class="font-mono text-[0.7rem] text-blood underline underline-offset-4">↗ {d.source}</a></p>
+          )}
+        </li>
+      ))}
+    </ul>
+
+    <article class="mt-10 border border-blood bg-blood/5 p-6 sm:p-8">
+      <h4 class="font-display text-2xl font-bold tracking-tight sm:text-3xl">
+        {chapter.palantir_business_model.feedback_loop.title}
+      </h4>
+      <Quote>{chapter.palantir_business_model.feedback_loop.description}</Quote>
+      <p class="mt-3 text-base leading-relaxed sm:text-lg">
+        <span class="meta me-2 text-blood">▸</span>
+        {chapter.palantir_business_model.feedback_loop.translation}
+      </p>
+      <p class="mt-3">
+        <a href={chapter.palantir_business_model.feedback_loop.url} target="_blank" rel="noopener noreferrer" class="font-mono text-[0.72rem] text-blood underline underline-offset-4">
+          ↗ {chapter.palantir_business_model.feedback_loop.source}
+        </a>
+      </p>
+    </article>
+  </section>
+)}
+
+{/* Gaza systems */}
+{chapter.gaza_systems && (
+  <section class="mt-16 border-t border-ink/30 pt-10">
+    <h3 class="font-display text-3xl font-bold tracking-tight sm:text-4xl">{chapter.gaza_systems.title}</h3>
+    <p class="mt-3 max-w-3xl text-base leading-relaxed sm:text-lg">{chapter.gaza_systems.intro}</p>
+
+    <div class="mt-8 grid gap-6 lg:grid-cols-3">
+      {chapter.gaza_systems.systems.map((s) => (
+        <article class="flex flex-col border border-ink/30 bg-ink p-6 text-bone">
+          <h4 class="font-display text-2xl font-bold tracking-tight">{s.name}</h4>
+          <p class="meta mt-2 text-blood">function</p>
+          <p class="mt-1 text-sm leading-relaxed">{s.function}</p>
+          {s.scale && <><p class="meta mt-3 text-blood">scale</p><p class="text-sm">{s.scale}</p></>}
+          {s.error_rate && <><p class="meta mt-3 text-blood">error rate</p><p class="text-sm">{s.error_rate}</p></>}
+          {s.human_oversight && <><p class="meta mt-3 text-blood">human oversight</p><p class="text-sm">{s.human_oversight}</p></>}
+          {s.officer_quote && <p class="mt-4 border-s-2 border-blood ps-3 text-sm italic">{s.officer_quote}</p>}
+          {s.officer_quote_about_civilians && <p class="mt-4 border-s-2 border-blood ps-3 text-sm italic">{s.officer_quote_about_civilians}</p>}
+          {s.purpose && <p class="mt-3 text-sm">{s.purpose}</p>}
+          {s.result && <p class="mt-3 font-display text-base font-semibold text-blood">{s.result}</p>}
+        </article>
+      ))}
+    </div>
+
+    <p class="mt-8 max-w-3xl text-base leading-relaxed sm:text-lg">{chapter.gaza_systems.casualties_context}</p>
+    <SourceList sources={chapter.gaza_systems.sources} ui={ui} />
+  </section>
+)}
+
+{/* Palantir CEO quotes */}
+{chapter.palantir_quotes && (
+  <section class="mt-16 border-t border-ink/30 pt-10">
+    <h3 class="font-display text-3xl font-bold tracking-tight sm:text-4xl">{chapter.palantir_quotes.title}</h3>
+    <p class="mt-3 max-w-3xl text-base leading-relaxed sm:text-lg">{chapter.palantir_quotes.intro}</p>
+    <div class="mt-6 space-y-6">
+      {chapter.palantir_quotes.quotes.map((q) => (
+        <article class="border-s-4 border-blood ps-5">
+          <blockquote class="font-display text-xl italic leading-snug text-ink sm:text-2xl">"{q.quote}"</blockquote>
+          <p class="meta mt-2 text-ink/60">— Alex Karp · {q.context}</p>
+          <p class="mt-1"><a href={q.url} target="_blank" rel="noopener noreferrer" class="font-mono text-[0.72rem] text-blood underline underline-offset-4">↗ {q.source}</a></p>
+        </article>
+      ))}
+    </div>
+  </section>
+)}

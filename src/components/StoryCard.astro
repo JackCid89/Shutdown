@@ -1,0 +1,106 @@
+---
+import SourceList from './SourceList.astro';
+import Quote from './Quote.astro';
+import type { SiteContent } from '../content.config';
+
+interface Story {
+  name: string;
+  age?: number;
+  age_at_conviction?: number;
+  country?: string;
+  year?: number;
+  tag: string;
+  story: string;
+  ruling?: string;
+  current_status?: string;
+  un_quote?: string;
+  victim_quote?: string;
+  lawsuit?: string;
+  petition?: string;
+  tweet_example?: string;
+  irony?: string;
+  purpose?: string;
+  key_insight?: string;
+  led_indicator_failure?: string;
+  expert_warning?: string;
+  punchline?: string;
+  victims?: { name: string; age?: number; story: string }[];
+  removal_guide?: { title: string; url: string };
+  sources: { outlet: string; url: string; author?: string }[];
+}
+
+interface Props { story: Story; ui: SiteContent['ui'] }
+const { story, ui } = Astro.props;
+const meta: string[] = [];
+if (story.age) meta.push(`${story.age}`);
+if (story.age_at_conviction) meta.push(`${story.age_at_conviction}`);
+if (story.country) meta.push(story.country);
+if (story.year) meta.push(`${story.year}`);
+---
+<article class="mb-14 border border-ink/15 bg-paper/40 p-6 sm:p-10">
+  <header class="mb-5">
+    <p class="meta mb-3 inline-block bg-blood px-2 py-1 text-bone">
+      {story.tag}
+    </p>
+    <h3 class="font-display text-[clamp(1.75rem,4vw,2.75rem)] font-bold leading-tight tracking-tight">
+      {story.name}
+    </h3>
+    {meta.length > 0 && (
+      <p class="meta mt-2 text-ink/60">{meta.join(' · ')}</p>
+    )}
+  </header>
+
+  <div class="prose-cierra max-w-3xl space-y-5 text-base leading-relaxed sm:text-lg">
+    <p>{story.story}</p>
+
+    {story.ruling && (
+      <Quote cite="Andrew Walker, Senior Coroner">{story.ruling}</Quote>
+    )}
+    {story.un_quote && <p>{story.un_quote}</p>}
+    {story.victim_quote && <Quote>{story.victim_quote}</Quote>}
+    {story.lawsuit && <p>{story.lawsuit}</p>}
+    {story.current_status && (
+      <div class="border-s-4 border-rust ps-4 text-ink/85">
+        <p>{story.current_status}</p>
+      </div>
+    )}
+    {story.petition && <p>{story.petition}</p>}
+    {story.tweet_example && (
+      <p class="border border-ink/30 bg-bone p-4 font-mono text-sm leading-snug">{story.tweet_example}</p>
+    )}
+    {story.irony && <p class="italic text-rust">{story.irony}</p>}
+    {story.purpose && <p>{story.purpose}</p>}
+    {story.led_indicator_failure && <p>{story.led_indicator_failure}</p>}
+    {story.expert_warning && <Quote>{story.expert_warning}</Quote>}
+    {story.key_insight && (
+      <p class="border-s-4 border-blood ps-4 font-display text-xl italic leading-snug">
+        {story.key_insight}
+      </p>
+    )}
+
+    {story.victims && story.victims.length > 0 && (
+      <ul role="list" class="my-6 space-y-4 border-y border-ink/15 py-5">
+        {story.victims.map((v) => (
+          <li>
+            <p class="meta text-blood">{v.name}{v.age ? ` · ${v.age}` : ''}</p>
+            <p class="mt-1">{v.story}</p>
+          </li>
+        ))}
+      </ul>
+    )}
+
+    {story.punchline && (
+      <p class="font-display text-xl font-semibold text-blood">▶ {story.punchline}</p>
+    )}
+
+    {story.removal_guide && (
+      <p class="mt-3">
+        <a href={story.removal_guide.url} target="_blank" rel="noopener noreferrer" class="font-mono text-xs uppercase tracking-wider text-blood underline underline-offset-4">
+          ↗ {story.removal_guide.title}
+        </a>
+      </p>
+    )}
+  </div>
+
+  <SourceList sources={story.sources} ui={ui} />
+</article>

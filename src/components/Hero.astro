@@ -1,0 +1,37 @@
+---
+import type { SiteContent } from '../content.config';
+interface Props { content: SiteContent }
+const { content } = Astro.props;
+const { hero, campaign } = content;
+---
+<section id="top" class="relative overflow-hidden border-b border-ink/15">
+  <div class="mx-auto grid max-w-screen-xl gap-10 px-4 pt-14 pb-16 sm:px-6 sm:pt-20 sm:pb-24 lg:grid-cols-12 lg:gap-12">
+    <div class="lg:col-span-9 lg:col-start-2">
+      <p class="meta mb-6 inline-flex items-center gap-2 text-blood">
+        <span class="inline-block size-1.5 bg-blood" aria-hidden="true"></span>
+        {hero.kicker}
+      </p>
+      <h1 class="font-display text-[clamp(2.75rem,9vw,7.5rem)] font-black leading-[0.92] tracking-[-0.04em] text-balance">
+        {hero.headline}
+      </h1>
+      <p class="mt-6 max-w-3xl font-display text-[clamp(1.4rem,2.5vw,2rem)] italic leading-tight text-rust">
+        {hero.subheadline}
+      </p>
+      <hr class="rule my-10 max-w-32 border-blood opacity-100" />
+      <p class="max-w-3xl text-lg leading-relaxed sm:text-xl">
+        {hero.lead}
+      </p>
+      <p class="mt-10 font-mono text-xs uppercase tracking-[0.2em] text-ink/60">
+        ↓ {hero.scroll_hint}
+      </p>
+    </div>
+  </div>
+
+  <div class="border-t border-ink/15 bg-ink text-bone">
+    <div class="mx-auto max-w-screen-xl px-4 py-6 sm:px-6">
+      <p class="text-balance text-base leading-relaxed sm:text-lg">
+        {campaign.thesis}
+      </p>
+    </div>
+  </div>
+</section>

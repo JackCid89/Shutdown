@@ -1,0 +1,34 @@
+---
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import type { LocaleCode } from '../i18n/locales';
+import type { SiteContent } from '../content.config';
+
+interface Props {
+  locale: LocaleCode;
+  content: SiteContent;
+}
+const { locale, content } = Astro.props;
+const chapters = content.chapters;
+---
+<header class="sticky top-0 z-30 border-b border-ink/15 bg-bone/95 backdrop-blur supports-[backdrop-filter]:bg-bone/80">
+  <div class="mx-auto flex max-w-screen-xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+    <a href="#top" class="font-display text-xl font-bold tracking-tight sm:text-2xl">
+      {content.campaign.name}<span class="text-blood">.</span>
+    </a>
+
+    <nav aria-label={content.ui.table_of_contents} class="hidden lg:block">
+      <ul class="flex items-center gap-5 font-mono text-[0.7rem] uppercase tracking-wider">
+        {chapters.map((c) => (
+          <li>
+            <a href={`#${c.slug}`} class="opacity-60 transition-opacity hover:opacity-100">
+              <span class="me-1 text-blood">{c.number}.</span>
+              {c.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <LanguageSwitcher locale={locale} content={content} />
+  </div>
+</header>

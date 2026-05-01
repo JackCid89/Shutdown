@@ -1,0 +1,7 @@
+---
+import StoryCard from '../StoryCard.astro';
+import type { SiteContent } from '../../content.config';
+interface Props { chapter: SiteContent['chapters'][number]; ui: SiteContent['ui'] }
+const { chapter, ui } = Astro.props;
+---
+{chapter.stories && chapter.stories.map((s) => <StoryCard story={s} ui={ui} />)}

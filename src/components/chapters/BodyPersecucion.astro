@@ -1,0 +1,16 @@
+---
+import StoryCard from '../StoryCard.astro';
+import Quote from '../Quote.astro';
+import type { SiteContent } from '../../content.config';
+interface Props { chapter: SiteContent['chapters'][number]; ui: SiteContent['ui'] }
+const { chapter, ui } = Astro.props;
+---
+{chapter.stories && chapter.stories.map((s) => <StoryCard story={s} ui={ui} />)}
+
+{chapter.context_data && (
+  <section class="mt-10 border-t border-ink/30 pt-10">
+    <p class="text-base leading-relaxed sm:text-lg">{chapter.context_data.stat}</p>
+    <p class="mt-4 text-base leading-relaxed sm:text-lg">{chapter.context_data.operations}</p>
+    <Quote>{chapter.context_data.anonymous_quote}</Quote>
+  </section>
+)}

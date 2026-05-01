@@ -1,0 +1,36 @@
+---
+import type { SiteContent } from '../content.config';
+interface Props { content: SiteContent }
+const { content } = Astro.props;
+const a = content.actions;
+const tones = ['border-blood', 'border-rust', 'border-ink'];
+---
+<section id="acciones" class="border-b border-ink/30">
+  <div class="mx-auto max-w-screen-xl px-4 py-20 sm:px-6">
+    <header class="mb-12 max-w-3xl">
+      <h2 class="font-display text-[clamp(2rem,5vw,3.75rem)] font-bold tracking-tight">{a.title}</h2>
+      <p class="mt-3 font-display text-xl italic text-rust sm:text-2xl">{a.subtitle}</p>
+    </header>
+    <div class="grid gap-6 lg:grid-cols-3">
+      {a.tiers.map((t, i) => (
+        <article class={`flex flex-col border-t-4 ${tones[i] || 'border-ink'} bg-paper/30 p-6`}>
+          <p class="meta text-blood">{t.duration}</p>
+          <h3 class="mt-2 font-display text-2xl font-bold leading-tight">{t.level}</h3>
+          <ul role="list" class="mt-5 space-y-3">
+            {t.items.map((item) => (
+              <li class="grid grid-cols-[auto_1fr] gap-3 text-sm leading-relaxed">
+                <span class="mt-2 inline-block size-1.5 shrink-0 bg-blood" aria-hidden="true"></span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          {t.removal_guide_link && (
+            <p class="mt-5">
+              <a href={t.removal_guide_link} target="_blank" rel="noopener noreferrer" class="font-mono text-[0.72rem] text-blood underline underline-offset-4">↗ I-XRAY removal guide</a>
+            </p>
+          )}
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,35 @@
+---
+import type { SiteContent } from '../content.config';
+
+interface Chapter {
+  number: string;
+  slug: string;
+  title: string;
+  subtitle: string;
+  thesis: string;
+}
+interface Props { chapter: Chapter; content: SiteContent }
+const { chapter, content } = Astro.props;
+---
+<header id={chapter.slug} class="mx-auto max-w-screen-xl scroll-mt-24 px-4 pt-20 pb-8 sm:px-6">
+  <div class="grid gap-6 lg:grid-cols-12">
+    <div class="lg:col-span-2">
+      <p class="meta text-ink/50">{content.ui.chapter_label}</p>
+      <p class="roman mt-1 font-display text-[clamp(4rem,10vw,7rem)] font-black leading-none text-blood">
+        {chapter.number}
+      </p>
+    </div>
+    <div class="lg:col-span-9 lg:col-start-4">
+      <h2 class="font-display text-[clamp(2rem,5vw,3.75rem)] font-bold leading-[1] tracking-tight text-balance">
+        {chapter.title}
+      </h2>
+      <p class="mt-3 font-display text-xl italic text-rust sm:text-2xl">
+        {chapter.subtitle}
+      </p>
+      <p class="mt-6 max-w-3xl text-base leading-relaxed text-ink/85 sm:text-lg">
+        {chapter.thesis}
+      </p>
+    </div>
+  </div>
+  <hr class="rule mt-10 border-ink" />
+</header>
